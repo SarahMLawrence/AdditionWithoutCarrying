@@ -2,22 +2,22 @@ def additionWithoutCarrying(param1, param2):
     a = str(param1)
     b = str(param2)
 
-    longer = ""
-    shorter = ""
+    longNum = ""
+    shortNum = ""
     if len(a) >= len(b):
-        longer = a[::-1]
-        shorter = b[::-1]
+        longNum = a[::-1]
+        shortNum = b[::-1]
     else:
-        longer = b[::-1]
-        shorter = a[::-1]
+        longNum = b[::-1]
+        shortNum = a[::-1]
     result = ""
     count = 0
 
-    for char in longer:
-        if count >= len(shorter):
+    for char in longNum:
+        if count >= len(shortNum):
             result += char
         else:
-            num = int(char) + int(shorter[count])
+            num = int(char) + int(shortNum[count])
             count += 1
             if num > 9:
                 result += str(num - 10)
